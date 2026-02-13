@@ -1,5 +1,14 @@
+# Advanced Algorithms and Programming  
+## LAB 01 – Revision of Algorithm Fundamentals  
 
-All implementations for this lab are located inside the `LAB_01` folder.
+### Team BB
+
+**Team Members:**
+- Khushi Gajjar  
+- Rahul 
+
+**Branch Used:** LAB_01_Revision  
+**Repository Structure:** All implementations are inside the `LAB_01` folder.
 
 ---
 
