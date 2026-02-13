@@ -82,3 +82,122 @@ This lab focused on revising fundamental algorithmic techniques including:
 - Sorting and interval merging strategies
 
 Each solution was implemented and tested with various edge cases to ensure correctness and efficiency. The complexity analysis confirms that all solutions achieve optimal asymptotic performance for their respective approaches.
+
+Exercise 4 – Polynomial Evaluation (Horner’s Method)
+Objective
+
+Evaluate a polynomial at a given value using Horner’s method instead of the naive power-based approach.
+
+Approach
+
+The polynomial is evaluated starting from the highest-degree coefficient.
+
+Instead of computing powers of x separately, the algorithm repeatedly multiplies the accumulated result by x and adds the next coefficient.
+
+This reduces the number of arithmetic operations and avoids repeated exponentiation.
+
+Complexity Analysis
+
+Let n be the degree of the polynomial.
+
+Each coefficient is processed exactly once.
+
+Time Complexity: O(n)
+Space Complexity: O(1) (only one variable is used to store the intermediate result)
+
+Compared to the naive approach, which may require repeated power calculations and up to O(n²) operations, Horner’s method provides a linear-time improvement.
+
+Edge Cases Tested
+
+Constant polynomial
+Empty coefficient list
+All zero coefficients
+Evaluation at x = 0
+Large degree polynomials
+
+Exercise 5 – Array Rotation Optimization
+Objective
+
+Rotate an array to the right by k positions using an in-place method with constant extra space.
+
+Approach
+
+The reverse method is used for optimal performance:
+
+Compute k mod n to handle cases where k is larger than the array length.
+
+Reverse the entire array.
+
+Reverse the first k elements.
+
+Reverse the remaining elements.
+
+This results in the desired rotated array without using additional memory.
+
+Complexity Analysis
+
+Let n be the length of the array.
+
+Each element is moved a constant number of times through the reverse operations.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+The algorithm achieves optimal time complexity for array rotation.
+
+Edge Cases Tested
+
+Empty array
+Single-element array
+k = 0
+k greater than array length
+Small arrays with k = 1
+Large arrays
+
+Exercise 6 – First Unique Character Finder
+Objective
+
+Find the index of the first non-repeating character in a string using linear time complexity.
+
+Approach
+
+A dictionary is used to count the frequency of each character.
+
+The algorithm performs two passes:
+
+First pass: count occurrences of each character.
+
+Second pass: return the index of the first character with frequency equal to 1.
+
+If no such character exists, return -1.
+
+Complexity Analysis
+
+Let n be the length of the string.
+
+Each character is processed at most twice.
+
+Time Complexity: O(n)
+Space Complexity: O(n) (dictionary stores character frequencies)
+
+The use of a hash table ensures constant-time lookup on average.
+
+Edge Cases Tested
+
+Empty string
+Single-character string
+All characters repeated
+Unique character at beginning
+Unique character at end
+Long strings with repeated patterns
+
+Conclusion
+
+Exercises 4, 5, and 6 further reinforced core algorithmic principles:
+
+• Efficient mathematical computation using algebraic transformation (Horner’s method)
+• In-place array manipulation using reversal techniques
+• Hash table usage for frequency-based pattern detection
+
+All implementations were tested with representative edge cases.
+The complexity analysis confirms that each solution achieves optimal asymptotic efficiency for its problem constraints.
