@@ -1,11 +1,11 @@
 # Advanced Algorithms and Programming  
 ## LAB 01 – Revision of Algorithm Fundamentals  
 
-### Team BB
+### Team 19
 
 **Team Members:**
-- Khushi Gajjar  
-- Rahul 
+- Khushi Gajjar (Exercise - 1,2,3)
+- Rahul Kumar Reddy Duggempudi (Exercice – 3,4,5)
 
 **Branch Used:** LAB_01_Revision  
 **Repository Structure:** All implementations are inside the `LAB_01` folder.
