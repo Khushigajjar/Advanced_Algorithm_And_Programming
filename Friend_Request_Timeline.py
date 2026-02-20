@@ -34,13 +34,13 @@ def analyze_message(message):
 
     return uppercase_count, punctuation_count, caps_ratio, classification, repeated_spam
 
-# Assuming the analyze_message function is already defined
 
-# Test messages
+
+
 test_messages = [
-    "Hey, want to connect?",          # Expected: CALM
-    "PLEASE ACCEPT MY REQUEST!!!",   # Expected: AGGRESSIVE
-    "Are you free? I need to talk!!!" # Expected: URGENT
+    "Hey, want to connect?",          
+    "PLEASE ACCEPT MY REQUEST!!!",   
+    "Are you free? I need to talk!!!" 
 ]
 
 for msg in test_messages:
