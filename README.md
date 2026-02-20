@@ -73,4 +73,92 @@ Detect social connections between users:
 
 - **Space:** O(number of friends stored in sets)  
 
+
+## Exercise 3: Friend Recommendation by Common Interests
+
+### Objective
+Recommend new friends and interests based on user behavior:
+- Identify similar users using common interests  
+- Recommend new interests using collaborative filtering  
+
 ---
+
+### Algorithm
+- Represent user interests using a matrix  
+- For each user:
+  - Compute similarity with the target user using cosine similarity  
+- Select top K similar users  
+- Recommend interests:
+  - Add interests from similar users  
+  - Ignore already existing interests of the target user  
+
+---
+
+### Test Cases
+
+| Target User | Similar Users | Recommendation | Purpose |
+|------------|--------------|---------------|--------|
+| User 0 | [3, 2] | [0,1,0,2,0] | Normal case |
+| All zeros | [] | [0,0,0,0,0] | No interests |
+| Identical users | Any top K | Same pattern | Similarity check |
+| K > U | Max users | Valid output | Boundary case |
+| No non-friends | [] | [0,...] | No recommendation |
+
+---
+
+### Complexity
+
+**Time Complexity**
+- Pairwise similarity → O(U² × I)  
+- Optimized (sparse data) → O(U² × k), where k ≪ I  
+
+**Space Complexity**
+- Interest matrix → O(U × I)  
+- Recommendation array → O(I)  
+
+---
+
+## Exercise 4: Mutual Followers Matrix
+
+### Objective
+Analyze social network relationships:
+- Identify mutual followers  
+- Calculate influence score of a user  
+
+---
+
+### Algorithm
+- Represent connections using adjacency matrix  
+- For mutual followers:
+  - Check if user i follows j AND j follows i  
+- For influence score:
+  - Count followers (incoming links)  
+  - Count following (outgoing links)  
+  - Compute:
+    influence = (followers + following) / total users  
+
+---
+
+### Test Cases
+
+| Friend Matrix Type | Mutual Pairs | Influence | Purpose |
+|------------------|-------------|----------|--------|
+| Sample matrix | [(0,1),(1,2),(2,3)] | 0.5 | Normal case |
+| No connections | [] | 0 | No followers |
+| Fully connected | All pairs | High value | Dense graph |
+| One-sided follow | [] | Low | No mutual |
+| Single user | [] | 0 | Edge case |
+
+---
+
+### Complexity
+
+**Time Complexity**
+- Mutual followers → O(U²)  
+- Followers & following → O(U)  
+
+**Space Complexity**
+- Adjacency matrix → O(U²)  
+
+---
+
