@@ -1,8 +1,10 @@
 # Advanced Algorithm and Programming Exercises
 
 ## Team Members
-- Khushi Gajjar (Exercise-1,2)
-- Rahul Kumar Reddy Duggempudi (Exercise-3,4)
+- 1. Khushi Gajjar (Exercise - 1)
+- 2. Rahul Kumar Reddy Duggempudi (Exercise – 2)
+- 3. ZiJie HUANG (Exercise-3)
+
 
 ## Exercise 2: Activity Feed Processing with Stacks and Queues
 
@@ -50,7 +52,5 @@ Implement stack and queue operations to manage activities and notifications in a
 - `batch_process(k)`: `O(k)`
 - `clear_history(r)`: `O(r)`
 
-### Run
-```bash
-python Exercise2_Activity_Feed_Processing.py
+
 ```
