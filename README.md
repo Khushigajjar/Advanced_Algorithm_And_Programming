@@ -5,6 +5,42 @@
 - 2. Rahul Kumar Reddy Duggempudi (Exercise – 2)
 - 3. ZiJie HUANG (Exercise-3)
 
+# Exercise 1: Content Feed Navigation with Doubly Linked List
+
+## Overview
+This exercise implements a **story feed system** using a **doubly linked list (DLL)**. Each story is represented as a node with `content`, `story_id`, and a `views` counter. The doubly linked list allows **bidirectional navigation**, insertion, deletion, and reordering of stories based on views. The exercise demonstrates how DLLs can efficiently support operations like moving forward/backward, jumping to a story, tracking views, and displaying nearby stories.
+
+---
+
+## Time Complexity
+
+| Operation | Time Complexity | Space Complexity |
+|-----------|----------------|----------------|
+| `add_story` | O(1) | O(1) |
+| `remove_story` | O(n) | O(1) |
+| `move_forward` | O(1) | O(1) |
+| `move_backward` | O(1) | O(1) |
+| `jump_to` | O(n) | O(1) |
+| `insert_after` | O(n) | O(1) |
+| `display_around_current(k)` | O(k) | O(1) |
+| `track_view` | O(1) | O(1) |
+| `most_viewed` | O(n) | O(1) |
+| `reorder_by_views` | O(n²) | O(n) |
+| `display` | O(n) | O(1) |
+
+---
+
+## Notes on Forward vs. Backward Navigation
+- Forward navigation is O(1) in both singly and doubly linked lists.  
+- Backward navigation is O(n) in singly linked lists because we must rescan from the head, but O(1) in doubly linked lists using the `prev` pointer.  
+- Removing a node by pointer is O(n) in singly linked lists but O(1) in doubly linked lists.  
+- Doubly linked lists require **8 extra bytes per node** for the `prev` pointer.
+
+---
+
+## Conclusion
+Doubly linked lists are ideal for applications like story feeds, browser history, or playlists where **bidirectional navigation** and **fast node deletion** are needed. The small memory overhead is justified by the advantage of **O(1) backward traversal** and **O(1) removal given a pointer**, making DLLs more efficient than singly linked lists for these use cases.
+
 
 ## Exercise 2: Activity Feed Processing with Stacks and Queues
 
