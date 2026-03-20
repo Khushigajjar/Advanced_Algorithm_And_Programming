@@ -1,4 +1,5 @@
 from datetime import datetime
+from tkinter import END
 class CommentNode:
     def __init__(self, comment_id, user_id, content, timestamp, likes):
         self.comment_id = comment_id
