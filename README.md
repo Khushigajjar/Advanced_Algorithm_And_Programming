@@ -64,3 +64,51 @@ Each comment is represented as a `CommentNode` containing:
 
 ### Conclusion
 This exercise demonstrates the use of recursion on tree structures. 
+
+
+
+## Exercise 3: Converting Recursion to Iteration
+
+### Objective
+
+The goal of this exercise is to understand when recursion is appropriate and how it can be converted into an iterative approach using an explicit stack. This is especially important when dealing with deep nested structures where recursion may lead to stack overflow.
+
+---
+
+### Implementation
+
+In this exercise, a comment thread structure is used where each comment can have multiple replies, forming a tree-like structure.
+
+1. **Recursive Flatten**
+
+A recursive function is implemented to traverse the comment thread in depth-first order. The function processes the current comment first, then recursively processes all its replies.
+
+2. **Iterative Flatten (Explicit Stack)**
+
+The same traversal is implemented using an explicit stack. Instead of relying on the system call stack, a stack data structure is used to simulate recursion.
+
+A simple state is introduced to track whether a node is being visited for the first time or after processing its replies. This helps maintain the correct traversal order.
+
+3. **Counting Comments (Tail Recursion)**
+
+A tail-recursive function is used to count the total number of comments. An accumulator is passed through recursive calls to keep track of the count.
+
+4. **Counting Comments (Iterative Version)**
+
+The counting logic is converted into a loop using a stack. This removes recursion entirely and provides better control over memory usage.
+
+---
+
+### Complexity
+
+- **Time Complexity:** O(n)  
+  Each comment is visited once.
+
+- **Space Complexity:** O(d)  
+  Where *d* is the depth of the comment tree.
+
+---
+
+### Conclusion
+
+This exercise demonstrates the differences between recursive and iterative approaches. While recursion is easier to write and understand, the iterative approach is more robust for deep or complex structures.
