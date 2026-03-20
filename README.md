@@ -119,8 +119,8 @@ Each post is represented as a `Post` containing:
    This solves to `T(n) = Θ(n)` (so the time complexity is `O(n)`).  
 
 2. **Merge sort vs insertion sort for 10,000 posts**  
-   - Merge sort: `O(n log n)` ≈ `10,000 × log2(10,000)` ≈ `10,000 × 13.29` ≈ `133,000` (order of magnitude)  
-   - Insertion sort (worst case): `O(n²)` ≈ `10,000 × 9,999 / 2` ≈ `50,000,000`  
+   - Merge sort: `O(n log n)` = `10,000 × log2(10,000)` = `10,000 × 13.29` ≈ `133,000` (order of magnitude)  
+   - Insertion sort (worst case): `O(n²)` = `10,000 × 9,999 / 2` = `50,000,000`  
    Merge sort is much faster for random/unsorted data; insertion sort is only competitive when data is nearly sorted.  
 
 3. **Recursion depth of merge sort on n elements**  
