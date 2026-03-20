@@ -67,13 +67,10 @@ This exercise demonstrates the use of recursion on tree structures.
 
 ## Exercise 2: Recursive Content Aggregation with Divide and Conquer
 
-Author: Rahul Kumar Reddy Duggempudi
-
 ### Objective
 Implement and analyze **divide-and-conquer engagement analytics** for a list of posts.  
 Compute max, total, average, threshold-based counts, sort by engagement using merge sort, and detect peak hour using recursion.  
 
-Python File: `Recursive_Content_Aggregation_with_Divide_Conquer.py`
 
 ---
 
