@@ -7,22 +7,20 @@
 
 ---
 
-## Exercise 1: Recursive Comment Thread Analysis
+## Exercise 1: Binary Tree Representation of Content Categories 
 
 ### Objective
-Implement and analyze a **recursive comment system** where comments and replies form a tree structure.  
-Perform operations like traversal, counting, searching, and deletion using recursion.
 
 ---
 
 ### Data Structure
-Each comment is represented as a `CommentNode` containing:
-- Comment ID  
-- User ID  
-- Content  
-- Timestamp  
-- Likes  
-- List of replies (child nodes)  
+Each comment is represented as a `CategoryNode` containing:
+- category ID  
+- name 
+- post_count  
+- left  
+- right  
+- parent  
 
 ---
 
