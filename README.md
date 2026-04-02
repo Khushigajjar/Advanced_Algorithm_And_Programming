@@ -131,4 +131,4 @@ Each category is represented as a `CategoryNode` containing:
 ---
 
 ### Conclusion
-This exercise shows how traversal order changes what you can compute efficiently: in-order is useful for sorted/structured listing, pre-order is helpful for exporting/serializing the structure, and post-order is best for bottom-up aggregation.
+This exercise shows how traversal order changes what you can compute efficiently: in-order is useful for sorted/structured listing, pre-order is helpful for exporting the structure, and post-order is best for bottom-up aggregation.
