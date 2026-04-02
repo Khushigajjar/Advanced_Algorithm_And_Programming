@@ -149,7 +149,6 @@ def post_order_collect_leaves(node: Optional[CategoryNode]) -> list[str]:
 	return result
 
 
-# Analytics
 
 
 def find_most_popular_category(node: Optional[CategoryNode]) -> Optional[str]:
