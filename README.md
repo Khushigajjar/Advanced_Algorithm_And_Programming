@@ -63,72 +63,116 @@ Each comment is represented as a `CategoryNode` containing:
 ### Conclusion
 This exercise demonstrates the use of recursion on tree structures. 
 
----
-
-## Exercise 2: Tree Traversals for Content Processing
+## Exercise 2: Recursive Content Aggregation with Divide and Conquer
 
 ### Objective
-Implement the three classic binary tree traversals (in-order, pre-order, post-order) to process category data in different orders for exporting, searching, and aggregating metrics.
+Implement and analyze **divide-and-conquer engagement analytics** for a list of posts.  
+Compute max, total, average, threshold-based counts, sort by engagement using merge sort, and detect peak hour using recursion.  
+
 
 ---
 
 ### Data Structure
-Each category is represented as a `CategoryNode` containing:
-- category ID
-- name
-- post_count
-- left
-- right
-- parent
+Each post is represented as a `Post` containing:
+- Post ID  
+- User ID  
+- Content preview  
+- Timestamp  
+- Likes  
+- Comments  
+- Shares  
+- Engagement score: `(likes × 1) + (comments × 2) + (shares × 3)`  
 
 ---
 
 ### Algorithms
 
-1. **In-order Collect**  
-   Returns a list of category names in in-order sequence (Left → Root → Right)
+1. **Maximum Engagement**  
+   Finds the maximum engagement score using divide and conquer (`max_engagement`)  
 
-2. **In-order Accumulate Posts**  
-   Traverses in-order and builds a running total of `post_count`
+2. **Total Engagement**  
+   Recursively sums engagement scores (`sum_engagement`)  
 
-3. **In-order Find k-th**  
-   Finds the k-th category in in-order order (1-indexed)
+3. **Average Engagement**  
+   Computes average as total / number of posts (`average_engagement`)  
 
-4. **Pre-order Export**  
-   Produces a formatted tree representation (indented by depth) for storage/transmission
+4. **Count Above Threshold**  
+   Counts posts with engagement score greater than a threshold (`count_above_threshold`)  
 
-5. **Pre-order Copy**  
-   Creates a deep copy of the entire tree (preserves structure and parent links)
+5. **Merge Sort by Engagement**  
+   Sorts posts in descending order of engagement (`merge_sort_by_engagement`, `merge`)  
 
-6. **Pre-order Serialize**  
-   Converts the tree into a single string using pre-order tokens (with `#` for nulls)
+6. **Peak Hour (Binary Search Style)**  
+   Finds the peak index in hourly likes data (`find_peak_hour`)  
 
-7. **Post-order Total Posts**  
-   Computes total posts for a category including all of its subcategories (children first)
+---
 
-8. **Post-order Average Depth**  
-   Calculates the average depth of leaf categories
+### Complexity
 
-9. **Post-order Collect Leaves**  
-   Collects all leaf categories (nodes with no children)
+1. **Time Complexity of `max_engagement`: O(n)**  
+   Proof (recurrence): `T(1) = O(1)`, `T(n) = 2T(n/2) + O(1)` (two halves + one comparison).  
+   This solves to `T(n) = Θ(n)` (so the time complexity is `O(n)`).  
 
-10. **Find Most Popular Category**  
-   Returns the category name with the highest `post_count` (category itself only)
+2. **Merge sort vs insertion sort for 10,000 posts**  
+   - Merge sort: `O(n log n)` = `10,000 × log2(10,000)` = `10,000 × 13.29` ≈ `133,000` (order of magnitude)  
+   - Insertion sort (worst case): `O(n²)` = `10,000 × 9,999 / 2` = `50,000,000`  
+   Merge sort is much faster for random/unsorted data; insertion sort is only competitive when data is nearly sorted.  
 
-11. **Category With Most Subcategories**  
-   Returns the category with the most direct children (left/right)
+3. **Recursion depth of merge sort on n elements**  
+   The array is halved until size 1, so recursion depth is about `floor(log2(n)) + 1` (i.e., `Θ(log n)`).  
+
+4. **Why `find_peak_hour` uses binary-search style recursion**  
+   We can discard half the range based on `likes[mid]` vs `likes[mid+1]`.  
+   This only works when the array is **unimodal** (non-decreasing up to a single peak, then non-increasing).  
+   Time complexity is `O(log n)` with recursion depth `O(log n)`.  
+
+---
+
+### Conclusion
+This exercise demonstrates divide-and-conquer recursion on arrays for analytics, sorting, and peak detection.  
+
+## Exercise 3: Converting Recursion to Iteration
+
+### Objective
+
+The goal of this exercise is to understand when recursion is appropriate and how it can be converted into an iterative approach using an explicit stack. This is especially important when dealing with deep nested structures where recursion may lead to stack overflow.
+
+---
+
+### Implementation
+
+In this exercise, a comment thread structure is used where each comment can have multiple replies, forming a tree-like structure.
+
+1. **Recursive Flatten**
+
+A recursive function is implemented to traverse the comment thread in depth-first order. The function processes the current comment first, then recursively processes all its replies.
+
+2. **Iterative Flatten (Explicit Stack)**
+
+The same traversal is implemented using an explicit stack. Instead of relying on the system call stack, a stack data structure is used to simulate recursion.
+
+A simple state is introduced to track whether a node is being visited for the first time or after processing its replies. This helps maintain the correct traversal order.
+
+3. **Counting Comments (Tail Recursion)**
+
+A tail-recursive function is used to count the total number of comments. An accumulator is passed through recursive calls to keep track of the count.
+
+4. **Counting Comments (Iterative Version)**
+
+The counting logic is converted into a loop using a stack. This removes recursion entirely and provides better control over memory usage.
 
 ---
 
 ### Complexity
 
 - **Time Complexity:** O(n)  
-  Each traversal visits every node once
+  Each comment is visited once.
 
-- **Space Complexity:** O(H)  
-  H = height of the tree due to recursion
+- **Space Complexity:** O(d)  
+  Where *d* is the depth of the comment tree.
 
 ---
 
 ### Conclusion
-This exercise shows how traversal order changes what you can compute efficiently: in-order is useful for sorted/structured listing, pre-order is helpful for exporting the structure, and post-order is best for bottom-up aggregation.
+
+This exercise demonstrates the differences between recursive and iterative approaches. While recursion is easier to write and understand, the iterative approach is more robust for deep or complex structures.
