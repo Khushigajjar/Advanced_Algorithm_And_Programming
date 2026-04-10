@@ -150,7 +150,6 @@ def add_friendship(graph: Graph, user_a: Any, user_b: Any) -> None:
 	if user_a not in graph[user_b]:
 		graph[user_b].append(user_a)
 
-
 def add_friendships(graph: Graph, edges: Iterable[tuple[Any, Any]]) -> None:
 	for a, b in edges:
 		add_friendship(graph, a, b)
