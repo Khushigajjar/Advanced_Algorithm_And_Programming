@@ -20,6 +20,5 @@
   - Connected components + connectivity check
   - Path existence (`has_path`) and path reconstruction (`find_path`)
   - Simple traversal-based analytics (component sizes, largest component, isolated users)
-
 ```
 
