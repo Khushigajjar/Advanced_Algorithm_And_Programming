@@ -7,4 +7,19 @@
 
 ---
 
-## Exercise 1: raph Representations for Social Networks 
+## Exercise 1: Graph Representations for Social Networks
+
+---
+
+## Exercise 2: Graph Traversals (DFS) for Social Network Analysis
+
+- Implementation file: `Exercise2_Graph_Traversals.py`
+- Includes:
+
+  - Recursive DFS and iterative DFS (stack)
+  - Connected components + connectivity check
+  - Path existence (`has_path`) and path reconstruction (`find_path`)
+  - Simple traversal-based analytics (component sizes, largest component, isolated users)
+
+```
+
