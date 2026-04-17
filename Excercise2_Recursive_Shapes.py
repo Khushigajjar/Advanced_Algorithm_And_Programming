@@ -65,7 +65,7 @@ def _as_bool_grid(fractal_image) -> BoolGrid:
 		if not fractal_image:
 			return []
 		if isinstance(fractal_image[0], list):
-			return fractal_image  # assume already a BoolGrid
+			return fractal_image  
 
 	if hasattr(fractal_image, "size") and hasattr(fractal_image, "getpixel"):
 		width, height = fractal_image.size
