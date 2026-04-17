@@ -5,47 +5,25 @@
 - Rahul Kumar Reddy Duggempudi – Exercise 2
 - ZiJie HUANG – Exercise 3
 
----
+### Exercise 1: Divide & Conquer – Spatial Splitting  
+## Objective: 
+Implement recursive functions that split a 2D space into smaller regions.
 
-## Exercise 1: Graph Representations for Social Networks
+## Algorithm
+Start with the full region, compute point density, and recursively split into four quadrants until the minimum region size is reached.
 
+## Complexity
+**Time:** O(n × (W / min_size)²), worst case O(n²)  
+**Space:** O(log(W / min_size)) 
 
-Implements a `SocialGraph` structure using both **adjacency matrix** and **adjacency linked list** representations simultaneously.
+## Exercise 2 — Fractal Drawing (Recursive Shapes)
 
-## Operations
-- `add_friendship(u, v)` / `remove_friendship(u, v)` — add or remove edge
-- `are_friends(u, v)` — check connection
-- `get_friends(u)` / `get_degree(u)` — neighbor info
-- `get_num_users()` / `get_num_edges()` — graph size
-- `is_complete_graph()` / `graph_density()` / `degree_distribution()` — graph properties
-- `matrix_to_list()` / `list_to_matrix()` — convert between representations
+What is implemented:
+- draw_sierpinski(canvas, x, y, size, depth)
+- draw_tree(canvas, x, y, length, angle, depth)
+- fractal_dimension(fractal_image, box_sizes)
+- count_nonempty_boxes(image, box_size)
 
-## Complexity Highlights
-
-| Operation | Matrix | List |
-|---|---|---|
-| `are_friends` | O(1) | O(deg(u)) |
-| `get_friends` | O(n) | O(deg(u)) |
-| `add/remove` | O(1) | O(deg(u)) |
-
-## Space (1B users, avg degree 150)
-| Representation | Memory |
-|---|---|
-| Adjacency Matrix | ~125 PB |
-| Adjacency List | ~3.6 TB |
-
-
-
----
-
-## Exercise 2: Graph Traversals (DFS) for Social Network Analysis
-
-- Implementation file: `Exercise2_Graph_Traversals.py`
-- Includes:
-
-  - Recursive DFS and iterative DFS (stack)
-  - Connected components + connectivity check
-  - Path existence (`has_path`) and path reconstruction (`find_path`)
-  - Simple traversal-based analytics (component sizes, largest component, isolated users)
-```
-
+Complexity analysis answers:
+1) Sierpiński (depth 5): 3^5 = 243 small triangles
+2) Fractal dimension: straight line = 1, filled square = 2 (Sierpiński = 1.585)
