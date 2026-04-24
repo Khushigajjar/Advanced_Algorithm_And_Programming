@@ -9,10 +9,6 @@
 
 Objective: Implement a BST to manage user profiles by user_id and efficiently find friends-of-friends for friend recommendations. 
 
-## Exercise 2: Binary Heap – Trending Posts Feed
-
-This exercise implements a max-heap for trending posts. Each heap entry is stored as:
-
 Implemented this functions:
 - insert() - O(n)
 - find() - O(n)
@@ -23,6 +19,9 @@ Implemented this functions:
 - is_balanced() - O(n²)
 - get_leaf_count() - O(n)
 
+## Exercise 2: Binary Heap – Trending Posts Feed
+
+This exercise implements a max-heap for trending posts. Each heap entry is stored as:
 
 - `(likes, post_id, timestamp)`
 
