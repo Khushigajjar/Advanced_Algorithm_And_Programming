@@ -3,27 +3,40 @@
 ## Team Members
 - Khushi Gajjar – Exercise 1 + Final integration question
 - Rahul Kumar Reddy Duggempudi – Exercise 2
-- ZiJie HUANG – Exercise 3
+- ZiJie HUANG – Exercise 3 + Final integration question
 
-### Exercise 1: Divide & Conquer – Spatial Splitting  
-## Objective: 
-Implement recursive functions that split a 2D space into smaller regions.
+## Exercise 1: Binary Search Trees – User Search & Friend-of-Friend Suggestions 
 
-## Algorithm
-Start with the full region, compute point density, and recursively split into four quadrants until the minimum region size is reached.
+Objective: Implement a BST to manage user profiles by user_id and efficiently find friends-of-friends for friend recommendations. 
 
-## Complexity
-**Time:** O(n × (W / min_size)²), worst case O(n²)  
-**Space:** O(log(W / min_size)) 
+## Exercise 2: Binary Heap – Trending Posts Feed
 
-## Exercise 2 — Fractal Drawing (Recursive Shapes)
+This exercise implements a max-heap for trending posts. Each heap entry is stored as:
 
-What is implemented:
-- draw_sierpinski(canvas, x, y, size, depth)
-- draw_tree(canvas, x, y, length, angle, depth)
-- fractal_dimension(fractal_image, box_sizes)
-- count_nonempty_boxes(image, box_size)
+Implemented this functions:
+- insert() - O(n)
+- find() - O(n)
+- inorder_traversal() -O(n)
+- delete() - O(n)
+- suggest_friends() - O(k·f·n)
+- get_height() - O(n)
+- is_balanced() - O(n²)
+- get_leaf_count() - O(n)
 
-Complexity analysis answers:
-1) Sierpiński (depth 5): 3^5 = 243 small triangles
-2) Fractal dimension: straight line = 1, filled square = 2 (Sierpiński = 1.585)
+
+- `(likes, post_id, timestamp)`
+
+Implemented operations (see `Exercise2_BinaryHeap.py`):
+
+- `push(post_id, likes, timestamp)`
+- `pop_max()`
+- `peek_max()`
+- `get_top_k(k)`
+- `update_likes(post_id, new_likes, timestamp)`
+- `size()`
+- `is_valid_heap()`
+- `get_height()`
+- `get_level_order()`
+
+```
+
