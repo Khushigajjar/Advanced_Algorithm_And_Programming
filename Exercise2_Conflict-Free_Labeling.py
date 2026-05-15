@@ -62,7 +62,6 @@ def assign_labels(k, graph, node, labeling):
 
 	return False
 
-
 def find_min_labels(graph):
 	"""Find the minimum number of labels needed and one valid labeling."""
 	n = _graph_size(graph)
