@@ -25,7 +25,7 @@ Goal: choose a subset `S` to maximize total reach with `sum(costs[i] for i in S)
 
 ## Built-in tests in the file
 
-- **Test 1: Simple** — small instance
-- **Test 2: Greedy fails counterexample** — budget=10, (6,60) vs (5,49)+(5,49)
-- **Test 3: Medium** — slightly larger instance
-- **Test 4: Another** — another small comparison
+- **Test 1: Simple** - small instance
+- **Test 2: Greedy fails counterexample** - budget=10, (6,60) vs (5,49)+(5,49)
+- **Test 3: Medium** - slightly larger instance
+- **Test 4: Another** - another small comparison
