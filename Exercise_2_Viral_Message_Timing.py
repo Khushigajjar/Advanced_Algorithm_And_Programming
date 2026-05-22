@@ -22,7 +22,7 @@ def maximize_reach_exact(
     for i in range(n):
         c = costs[i]
         r = reaches[i]
-        curr = prev[:]  # dp row for first i+1 items
+        curr = prev[:]  
 
         for b in range(c, budget + 1):
             cand = prev[b - c] + r
